@@ -3,7 +3,7 @@ function __park
     set --local cursor (commandline --cursor)
     commandline --replace ""
 
-    function __unpark --inherit-variable cmd --inherit-variable cursor --on-event fish_prompt
+    function __unpark --inherit-variable cmd --inherit-variable cursor --on-event fish_postexec
         functions --erase __unpark
         commandline --replace $cmd
         commandline --cursor $cursor
